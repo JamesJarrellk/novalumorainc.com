@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova Lumora — The marketing department you couldn't afford. Now you can.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1f3d;--paper:#fff;--ink:#131a2a;--ink-soft:#4b556b;--rule:#e3e7ee;--panel:#f3f5f9;--yellow:#ffc21a;--yellow-ink:#131a2a;--red:#e03c31;--green:#1f8a4c}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0e1220;--ink:#eef1f7;--ink-soft:#aab3c5;--rule:#242c3f;--panel:#151b2c}}
+:root[data-theme="dark"]{--paper:#0e1220;--ink:#eef1f7;--ink-soft:#aab3c5;--rule:#242c3f;--panel:#151b2c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.5 "Archivo",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+a{color:inherit}.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+h1,h2,h3{margin:0;line-height:1.02;font-weight:900;letter-spacing:-.015em;font-variation-settings:"wdth" 78}
+h1{font-size:clamp(38px,6.6vw,78px)}h2{font-size:clamp(30px,4.4vw,50px);margin-bottom:18px}h3{font-size:22px;font-variation-settings:"wdth" 88;margin-bottom:8px}
+p{margin:0 0 16px;max-width:62ch}.sub{font-size:clamp(18px,2.2vw,22px);max-width:48ch}
+section{padding:72px 0}
+.btn{display:inline-block;background:var(--yellow);color:var(--yellow-ink);text-decoration:none;font-weight:800;padding:18px 28px;border-radius:8px;font-size:19px;border:2px solid transparent;box-shadow:0 6px 0 rgba(0,0,0,.18)}
+.btn:active{transform:translateY(3px);box-shadow:0 3px 0 rgba(0,0,0,.18)}.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.btn-lg{font-size:21px;padding:20px 34px}.fine{font-size:14px;color:var(--ink-soft);margin-top:12px}
+.hero{background:var(--navy);color:#fff;padding:56px 0 64px}.hero .sub{color:#c9d2e6}.hero .fine{color:#9fb0cf}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}@media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+.tag{display:inline-block;background:rgba(255,194,26,.14);color:var(--yellow);font-weight:700;padding:6px 12px;border-radius:999px;font-size:14px;margin-bottom:18px}
+/* audit box */
+.audit{background:#fff;color:var(--yellow-ink);border-radius:16px;padding:24px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.audit h3{font-size:22px;margin-bottom:6px}.audit .hint{font-size:15px;color:#5b6478;margin-bottom:16px}
+.audit ul{list-style:none;margin:0 0 18px;padding:0}.audit li{padding:9px 0;border-top:1px solid #e3e7ee;display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15px}
+.audit li:last-child{border-bottom:1px solid #e3e7ee}.audit .ok{color:var(--green);font-weight:900}
+.audit .btn{width:100%;text-align:center;box-shadow:none}
+.strip{background:var(--panel);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:20px 0}
+.strip .wrap{display:flex;gap:28px;flex-wrap:wrap;justify-content:space-between;font-size:15px;color:var(--ink-soft)}.strip b{color:var(--ink)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}@media(max-width:820px){.split{grid-template-columns:1fr}}
+/* compare table */
+table{width:100%;border-collapse:collapse;font-size:16px}
+th,td{padding:14px 12px;border-top:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font-weight:800;font-variation-settings:"wdth" 88}thead th{border-top:0;color:var(--ink-soft);font-weight:700;font-size:14px}
+tbody tr:last-child td{border-bottom:1px solid var(--rule)}
+td.us,th.us{background:rgba(255,194,26,.14);font-weight:700}
+.tblwrap{overflow-x:auto}
+@media(max-width:700px){table{font-size:14px}th,td{padding:10px 8px}}
+/* what we run */
+.grid4{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}@media(max-width:700px){.grid4{grid-template-columns:1fr}}
+.grid4 div{background:var(--panel);border-radius:14px;padding:22px}.grid4 p{color:var(--ink-soft);font-size:16px;margin:0}
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}@media(max-width:780px){ol.steps{grid-template-columns:1fr}}
+ol.steps li{counter-increment:s;padding-top:14px;border-top:3px solid var(--ink)}ol.steps li::before{content:"Step " counter(s);display:block;font-weight:800;font-size:13px;color:var(--ink-soft);margin-bottom:8px}
+ol.steps p{color:var(--ink-soft);font-size:16px;margin:0}
+.offer{background:var(--navy);color:#fff}.offer h2{color:#fff}
+.guarantee{border:2px dashed var(--yellow);border-radius:14px;padding:22px 24px;max-width:640px;margin:0 0 28px}.guarantee h3{color:var(--yellow);font-size:20px}.guarantee p{color:#e6ebf5;margin:0}
+.price{font-size:clamp(20px,2.6vw,28px);font-weight:700;max-width:34ch;line-height:1.3;color:#fff;margin-bottom:24px}
+details{border-top:1px solid var(--rule);padding:6px 0}details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-weight:700;font-size:18px;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-weight:900;color:var(--ink-soft)}details[open] summary::after{content:"–"}details p{color:var(--ink-soft);padding-bottom:14px}
+footer{padding:28px 0 40px;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--rule)}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--rule);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:9}
+.sticky .t{font-size:14px;color:var(--ink-soft)}.sticky .btn{padding:12px 18px;font-size:16px;box-shadow:none;white-space:nowrap}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;margin-bottom:10px}
+@media(max-width:480px){.fgrid{grid-template-columns:1fr}}
+#planform label{display:block;font-size:13px;font-weight:600;color:#3b4457}
+#planform .full{margin-bottom:14px}
+#planform input,#planform textarea{display:block;width:100%;margin-top:4px;padding:10px 12px;border:1px solid #cfd5e0;border-radius:8px;font:inherit;font-size:15px;color:#131a2a;background:#fff}
+#planform input:focus,#planform textarea:focus{outline:2px solid var(--navy);outline-offset:1px;border-color:var(--navy)}
+#planform .btn{width:100%;text-align:center;box-shadow:none;border:0;cursor:pointer}
+#planform .btn[disabled]{opacity:.6;cursor:wait}
+#planform .err{color:var(--red);font-size:14px;margin-top:8px}
+@media(prefers-reduced-motion:no-preference){.btn{transition:transform .08s,box-shadow .08s}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="tag">AI-run marketing for local businesses · Nashville, TN</div>
+      <h1>The marketing department you couldn't afford to hire. Now you can.</h1>
+      <p class="sub">Agencies want $5,000 a month and a year-long contract. A marketing hire wants a salary. We run your entire marketing — Google, content, reviews, follow-up, ads when they make sense — with AI doing the work and two founders steering it. For less than a part-timer.</p>
+      <a class="btn btn-lg" href="#audit">Get my free marketing plan</a>
+      <p class="fine">Month to month. Results in weeks, not quarters. If it hasn't paid for itself in 30 days, that month is free.</p>
+    </div>
+    <div class="audit" id="audit">
+      <h3>See your plan before you pay a dollar</h3>
+      <div class="hint">Send us your business name and website. Within 48 hours you get a written plan showing:</div>
+      <ul>
+        <li><span class="ok">✓</span><span>Where you rank on Google for what you do — and who's beating you</span></li>
+        <li><span class="ok">✓</span><span>What's broken on your listing and site that's costing you customers</span></li>
+        <li><span class="ok">✓</span><span>The three things we'd do first, in order, and what they're worth</span></li>
+        <li><span class="ok">✓</span><span>What it would cost — a number, not a "let's hop on a call"</span></li>
+      </ul>
+      <form id="planform" novalidate>
+        <div class="fgrid">
+          <label>Business name<input name="business_name" required autocomplete="organization"></label>
+          <label>Website<input name="website" type="url" placeholder="https://" required></label>
+          <label>Your email<input name="email" type="email" required autocomplete="email"></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+          <label>City<input name="city" placeholder="Nashville, TN"></label>
+          <label>What do you do?<input name="business_type" placeholder="Plumber, dentist, roofer..."></label>
+        </div>
+        <label class="full">Biggest headache with getting customers right now<textarea name="challenge" rows="2"></textarea></label>
+        <button class="btn" type="submit">Send me the free plan</button>
+        <p class="fine" style="text-align:center;margin-top:10px">If the plan is stuff you already knew, you lost nothing.</p>
+      </form>
+      <div id="planthanks" hidden>
+        <h3>Got it.</h3>
+        <p style="color:#5b6478;margin:0">Your plan will be in your inbox within 48 hours, from James. If you don't see it, check spam or email <a href="mailto:james@novalumorainc.com">james@novalumorainc.com</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <span><b>Two founders</b> · you talk to us, not an account manager</span>
+    <span><b>AI does the grind</b> · we do the thinking</span>
+    <span><b>No contract</b> · leave any month</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <h2>Here's the math that's been keeping you stuck.</h2>
+      <p>A real agency costs more per month than the customers it brings you, so you never hired one. A marketing employee costs more than that. So marketing became the thing you do at nine at night, or the thing that doesn't get done.</p>
+      <p>Meanwhile the shop down the road with more Google reviews and a cleaner listing is getting the calls that were supposed to be yours. Not because they're better. Because they showed up.</p>
+      <p>That math changed. AI can now do 90% of what a marketing team does — writing, posting, optimizing, following up — for almost nothing. What it can't do is know your business and make judgment calls. That's us.</p>
+    </div>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th></th><th>Agency</th><th>Freelancer</th><th>Do it yourself</th><th class="us">Nova Lumora</th></tr></thead>
+        <tbody>
+          <tr><th>Monthly cost</th><td>$3,000–8,000</td><td>$1,000–3,000</td><td>Your evenings</td><td class="us">Less than a part-timer</td></tr>
+          <tr><th>Contract</th><td>6–12 months</td><td>Project by project</td><td>—</td><td class="us">Month to month</td></tr>
+          <tr><th>Time to results</th><td>3–6 months</td><td>Depends</td><td>Never finished</td><td class="us">Weeks</td></tr>
+          <tr><th>Who does the work</th><td>A junior you'll never meet</td><td>One person, one skill</td><td>You</td><td class="us">AI, run by the founders</td></tr>
+          <tr><th>If it doesn't work</th><td>You still pay</td><td>You still pay</td><td>Wasted nights</td><td class="us">That month is free</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>What we actually run for you, every week</h2>
+    <div class="grid4">
+      <div><h3>Get found</h3><p>Google Business Profile built out and kept current. Local SEO on your site. Posts and updates that keep you at the top when someone nearby searches for what you do.</p></div>
+      <div><h3>Get trusted</h3><p>Review requests go out automatically after every job. Replies to every review, in your voice. More stars than the guy down the road, without you asking anyone.</p></div>
+      <div><h3>Get chosen</h3><p>Content that answers the questions your customers are already Googling. Social posts that go out without you touching them. Ads only when the numbers say they'll pay.</p></div>
+      <div><h3>Get booked</h3><p>Every call, form, and message gets an answer in seconds and a follow-up until it's booked or dead. Nothing goes quiet. Nothing gets lost.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <ol class="steps" style="margin-bottom:40px">
+      <li style="border-color:var(--yellow)"><h3>Free plan in 48 hours</h3><p style="color:#c9d2e6">We run your business through our system and send you what we found and what we'd do. No call required to get it.</p></li>
+      <li style="border-color:var(--yellow)"><h3>Say yes, we go live</h3><p style="color:#c9d2e6">Everything in the plan is running inside a week. You approve the voice once; we handle the rest.</p></li>
+      <li style="border-color:var(--yellow)"><h3>Weekly scorecard</h3><p style="color:#c9d2e6">Every Monday: where you rank, reviews earned, leads caught, jobs booked. Plain numbers. You'll know if it's working.</p></li>
+    </ol>
+    <p class="price">One flat monthly rate, set in your plan. Priced so one extra customer a month covers it. No setup fee, no per-lead fee, no contract.</p>
+    <div class="guarantee">
+      <h3>The 30-day guarantee</h3>
+      <p>If it hasn't brought in more than it costs in your first 30 days, that month is free and we'll shut it off. You keep the listing, the reviews, the content, the leads. No forms, no argument.</p>
+    </div>
+    <a class="btn btn-lg" href="#audit">Get my free marketing plan</a>
+    <p class="fine" style="color:#9fb0cf">We take on a handful of new businesses a month. Two founders can only steer so many.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The questions everyone asks</h2>
+    <details><summary>Is this just ChatGPT writing my blog posts?</summary><p>No. We use AI the way a shop uses power tools — it does the labor, we make the decisions. AI drafts, posts, optimizes, and follows up. We decide what to say, what to prioritize, and when something's off. You'll never talk to a bot.</p></details>
+    <details><summary>Is this ads? I've been burned by ad agencies.</summary><p>Most of what we do is organic: Google listing, reviews, content, follow-up. We only run ads when your listing and site can convert the traffic, and only when the plan says the math works. Ad spend is always yours and always separate.</p></details>
+    <details><summary>Do I have to change my website or phone number?</summary><p>No. We fix what's there and add what's missing around it. If you don't have a website, we'll tell you honestly whether you need one yet.</p></details>
+    <details><summary>How is this so much cheaper than an agency?</summary><p>Because we don't have a building full of junior account managers. The AI does the hours. Two founders do the judgment. The savings are the whole point.</p></details>
+    <details><summary>What if I'm a one-person shop?</summary><p>That's who this is built for. You're the one doing marketing at nine at night. We're the reason you can stop.</p></details>
+    <details><summary>Who are you?</summary><p>James Jarrell and Conor Kelly. We built AI systems for our own projects first — a pricing engine, a phone assistant that books appointments by itself — before pointing them at local businesses. Nashville-based. You'll have our cell numbers.</p></details>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <h2>Get the plan. Then decide.</h2>
+    <p class="sub">Business name and website. That's all we need. Within 48 hours you'll know exactly where you stand, what we'd fix first, and what it costs.</p>
+    <a class="btn btn-lg" href="#audit">Send me the free plan</a>
+    <p class="fine">Or email <a href="mailto:james@novalumorainc.com">james@novalumorainc.com</a></p>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Nova Lumora Inc. · Nashville, Tennessee</span><span>james@novalumorainc.com</span></div></footer>
+<div class="sticky"><span class="t">Free marketing plan in 48 hours · no contract</span><a class="btn" href="#audit">Get it</a></div>
+<script>
+(function(){
+  var f=document.getElementById('planform'); if(!f) return;
+  var HOOK='https://hook.us2.make.com/63wkmvlk9o8gcf2pu85oijk0291egikh';
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var fd=new FormData(f);
+    var name=(fd.get('business_name')||'').trim(), site=(fd.get('website')||'').trim(), email=(fd.get('email')||'').trim();
+    var old=f.querySelector('.err'); if(old) old.remove();
+    if(!name||!site||!email||site.indexOf('.')<0||email.indexOf('@')<0){
+      var p=document.createElement('p'); p.className='err'; p.textContent='Business name, a website, and an email are all we need - please fill those three.'; f.appendChild(p); return;
+    }
+    if(!/^https?:\/\//i.test(site)){ fd.set('website','https://'+site); }
+    var btn=f.querySelector('button'); btn.disabled=true; btn.textContent='Sending...';
+    fetch(HOOK,{method:'POST',body:fd}).then(function(){ f.hidden=true; document.getElementById('planthanks').hidden=false; })
+    .catch(function(){ btn.disabled=false; btn.textContent='Send me the free plan'; var p=document.createElement('p'); p.className='err'; p.textContent='That did not go through. Email james@novalumorainc.com and we will do it by hand.'; f.appendChild(p); });
+  });
+})();
+</script>
+</body>
+</html>
