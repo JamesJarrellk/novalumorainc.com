@@ -123,13 +123,10 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backdrop-filt
 
 /* ---------- concepts ---------- */
 .cards{display:grid;gap:22px;margin-top:40px}
-@media(min-width:760px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:760px){.cards{grid-template-columns:1fr 1fr 1fr}}
 .card{display:block;text-decoration:none;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:rgba(15,31,61,.45);transition:border-color .3s,transform .3s cubic-bezier(.2,.8,.2,1)}
 .card:hover{border-color:rgba(255,194,26,.6);transform:translateY(-4px)}
-.card .shot{height:220px;background:linear-gradient(160deg,#13264a,#0a1530);position:relative;overflow:hidden}
-.card .shot::after{content:"";position:absolute;left:10%;right:10%;top:34px;bottom:-20px;border-radius:14px 14px 0 0;background:#fff;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
-.card .shot span{position:absolute;z-index:1;left:calc(10% + 18px);top:58px;color:#0F1F3D;font-weight:700;font-size:1.1rem;font-stretch:108%}
-.card .shot em{position:absolute;z-index:1;left:calc(10% + 18px);top:92px;width:40%;height:8px;background:var(--gold);border-radius:4px}
+.card img{display:block;width:100%;aspect-ratio:1200/760;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
 .card .meta{padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px}
 .card .meta b{font-stretch:106%}
 .card .meta small{color:var(--mute)}
@@ -255,15 +252,19 @@ footer .quiet:hover{color:var(--cream);border-color:rgba(243,239,230,.4)}
   <section id="concepts">
     <div class="wrap">
       <h2 class="rv">Website concepts</h2>
-      <p class="lede rv" style="margin-top:14px">Two demo designs we built for local detailing businesses. These are independent demo designs—not paying clients, completed client projects or endorsements.</p>
+      <p class="lede rv" style="margin-top:14px">Three demo designs for the kinds of businesses we build for. These are fictional demo businesses—not paying clients, completed client projects or endorsements.</p>
       <div class="cards">
-        <a class="card rv" href="https://nova-website-proposals.digsfly.chatgpt.site/island-auto-detailing/" target="_blank" rel="noopener">
-          <div class="shot"><span>Island Auto Detailing</span><em></em></div>
-          <div class="meta"><b>Island Auto Detailing</b><small>Demo design</small></div>
+        <a class="card rv" href="/concepts/brightside-mobile-detailing/" target="_blank" rel="noopener">
+          <img src="/assets/brightside-mobile-detailing.jpg" alt="Brightside Mobile Detailing demo website" loading="lazy">
+          <div class="meta"><b>Brightside Mobile Detailing</b><small>Demo design</small></div>
         </a>
-        <a class="card rv" href="https://nova-website-proposals.digsfly.chatgpt.site/mayhew-auto-detail/" target="_blank" rel="noopener">
-          <div class="shot"><span>Mayhew Auto Detail</span><em></em></div>
-          <div class="meta"><b>Mayhew Auto Detail</b><small>Demo design</small></div>
+        <a class="card rv" href="/concepts/ridgeline-pressure-washing/" target="_blank" rel="noopener">
+          <img src="/assets/ridgeline-pressure-washing.jpg" alt="Ridgeline Pressure Washing demo website" loading="lazy">
+          <div class="meta"><b>Ridgeline Pressure Washing</b><small>Demo design</small></div>
+        </a>
+        <a class="card rv" href="/concepts/cedar-and-stone-lawn/" target="_blank" rel="noopener">
+          <img src="/assets/cedar-and-stone-lawn.jpg" alt="Cedar &amp; Stone Lawn Care demo website" loading="lazy">
+          <div class="meta"><b>Cedar &amp; Stone Lawn Care</b><small>Demo design</small></div>
         </a>
       </div>
     </div>
