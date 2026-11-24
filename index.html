@@ -97,6 +97,26 @@ nav .cta{color:var(--text)}
 .prompt i{width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none;animation:pulse 1.8s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.35}}
 
+/* founding signup */
+.founding{margin-top:28px;padding:22px;border-radius:18px;border:1px solid rgba(226,182,92,.35);background:rgba(226,182,92,.05)}
+.founding .price{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.founding .price b{font-family:"Instrument Serif",serif;font-weight:400;font-size:1.9rem;color:var(--text);line-height:1}
+.founding .price span{font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.founding p{color:var(--mute);font-size:.95rem;margin-top:10px}
+.founding form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.founding input{font:inherit;font-size:.95rem;color:var(--text);background:rgba(11,17,32,.7);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;width:100%;min-width:0}
+.founding input::placeholder{color:#6f7a90}
+.founding input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(226,182,92,.18)}
+.founding button{grid-column:1/-1;font:inherit;font-weight:500;font-size:.96rem;cursor:pointer;border:0;border-radius:999px;padding:13px 20px;background:var(--gold);color:#1a1405;transition:background .2s}
+.founding button:hover{background:var(--gold2)}
+.founding button:disabled{opacity:.6;cursor:wait}
+.founding .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.founding .fine{font-size:.82rem;margin-top:10px}
+.founding .msg{font-size:.92rem;margin-top:12px}
+.founding .msg.ok{color:#9be3b7}
+.founding .msg.err{color:#ffb4a8}
+@media (max-width:520px){.founding form{grid-template-columns:1fr}}
+
 @media (max-width:860px){
   .product{grid-template-columns:1fr}
   .product .visual{order:-1}
@@ -214,6 +234,18 @@ footer .links{display:flex;gap:22px}
             <li>Get finished reels back, ready to share</li>
             <li>Publish to platforms like Spotify, and it only posts with your permission</li>
           </ul>
+          <div class="founding" id="founding">
+            <div class="price"><span>7 founder slots</span><b>$1,000</b><span>per slot</span></div>
+            <p>Reserve a slot now, free. Founders see a preview of Lumora Studios first and are only asked to pay after they've seen it. Because you were with us at the beginning, you keep a discounted rate for the long run, with details to come.</p>
+            <form id="foundingForm" novalidate>
+              <label class="hp" aria-hidden="true">Company <input name="company" tabindex="-1" autocomplete="off"></label>
+              <input name="name" type="text" placeholder="Your name" autocomplete="name" required maxlength="120" aria-label="Your name">
+              <input name="email" type="email" placeholder="Email address" autocomplete="email" required maxlength="200" aria-label="Email address">
+              <button type="submit">Reserve my slot</button>
+            </form>
+            <p class="fine">No payment now. We'll only use your email to contact you about Lumora Studios.</p>
+            <p class="msg" id="foundingMsg" role="status" aria-live="polite" hidden></p>
+          </div>
         </div>
         <div class="visual studio" aria-hidden="true">
           <div class="frames"><div></div><div></div><div></div></div>
@@ -300,6 +332,23 @@ footer .links{display:flex;gap:22px}
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
   els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById('foundingForm'),m=document.getElementById('foundingMsg');
+  if(!f)return;
+  function show(t,ok){m.textContent=t;m.className='msg '+(ok?'ok':'err');m.hidden=false}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=f.name.value.trim(),email=f.email.value.trim();
+    if(!name||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){show('Please add your name and a valid email.',false);return}
+    var b=f.querySelector('button');b.disabled=true;b.textContent='Reserving...';
+    var d=new FormData(f);
+    fetch('https://hook.us2.make.com/dqnetr7bwoedbbmkd8yl7ik110b4ghc6',{method:'POST',body:d})
+      .then(function(r){if(!r.ok)throw 0;f.hidden=true;show("You're on the list. We'll email you when your preview is ready.",true)})
+      .catch(function(){b.disabled=false;b.textContent='Reserve my slot';show('Something went wrong. Please email james@novalumorainc.com and we will save your slot.',false)});
+  });
 })();
 </script>
 </body>
