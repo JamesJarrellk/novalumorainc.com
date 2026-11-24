@@ -110,6 +110,7 @@ nav .cta{color:var(--text)}
 .founding button{grid-column:1/-1;font:inherit;font-weight:500;font-size:.96rem;cursor:pointer;border:0;border-radius:999px;padding:13px 20px;background:var(--gold);color:#1a1405;transition:background .2s}
 .founding button:hover{background:var(--gold2)}
 .founding button:disabled{opacity:.6;cursor:wait}
+.founding form[hidden]{display:none}
 .founding .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .founding .fine{font-size:.82rem;margin-top:10px}
 .founding .msg{font-size:.92rem;margin-top:12px}
@@ -341,7 +342,7 @@ footer .links{display:flex;gap:22px}
   function show(t,ok){m.textContent=t;m.className='msg '+(ok?'ok':'err');m.hidden=false}
   f.addEventListener('submit',function(e){
     e.preventDefault();
-    var name=f.name.value.trim(),email=f.email.value.trim();
+    var el=f.elements,name=el.namedItem('name').value.trim(),email=el.namedItem('email').value.trim();
     if(!name||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){show('Please add your name and a valid email.',false);return}
     var b=f.querySelector('button');b.disabled=true;b.textContent='Reserving...';
     var d=new FormData(f);
